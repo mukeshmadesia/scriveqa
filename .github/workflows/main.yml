@@ -15,7 +15,15 @@ jobs:
         with:
           browser: chrome
           env: false
-      - run: npx cypress run --record --key f665f078-4cb5-492f-8136-e2d193ac563f  
+          
+  cypress-run-electron:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - run: npx cypress run --record --key f665f078-4cb5-492f-8136-e2d193ac563f
+      
   cypress-run-firefox:
     runs-on: ubuntu-20.04
     steps:
@@ -45,7 +53,6 @@ jobs:
         with:
           browser: firefox
           env: false
-      - run: npx cypress run --record --key f665f078-4cb5-492f-8136-e2d193ac563f  
        
   cypress-run-edge:
     runs-on: ubuntu-latest
@@ -59,4 +66,4 @@ jobs:
         with:
           browser: edge
           env: false
-      - run: npx cypress run --record --key f665f078-4cb5-492f-8136-e2d193ac563f  
+          
