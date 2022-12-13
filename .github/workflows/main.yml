@@ -14,7 +14,9 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: chrome
-          env: false
+          record: true
+        env: 
+          CYPRESS_RECORD_KEY: f665f078-4cb5-492f-8136-e2d193ac563f
           
   cypress-run-electron:
     runs-on: ubuntu-latest
@@ -23,20 +25,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - run: npx cypress run --record --key f665f078-4cb5-492f-8136-e2d193ac563f
-
-  cypress-run-firefox:
-    runs-on: ubuntu-latest
-    container: cypress/browsers:node16.16.0-chrome107-ff107-edge
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Cypress run
         uses: cypress-io/github-action@v4
         with:
-          browser: firefox
-          env: false
+          browser: electron
+          record: true
+        env: 
+          CYPRESS_RECORD_KEY: f665f078-4cb5-492f-8136-e2d193ac563f
+
        
   cypress-run-edge:
     runs-on: ubuntu-latest
@@ -51,3 +47,15 @@ jobs:
           browser: edge
           env: false
           
+  cypress-run-firefox:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node16.16.0-chrome107-ff107-edge
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          browser: firefox
+          env: false
