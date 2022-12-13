@@ -1,9 +1,9 @@
-name: Cypress Tests
+name: Scriveqa Cypress Tests
 
 on: [ workflow_dispatch ]
 
 jobs:
-  cypress-run:
+  cypress-run-chrome:
     runs-on: ubuntu-latest
     container: cypress/browsers:node12.18.3-chrome87-ff82
     steps:
@@ -16,3 +16,28 @@ jobs:
           browser: chrome
           env: false
        
+  cypress-run-firefox:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          browser: firefox
+          env: false
+          
+  cypress-run-edge:
+    runs-on: ubuntu-latest
+    container: cypress/browsers:node12.18.3-chrome87-ff82
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          browser: edge
+          env: false
