@@ -45,19 +45,7 @@ jobs:
         uses: cypress-io/github-action@v4
         with:
           browser: edge
-          env: false
+          record: true
+        env: 
+          CYPRESS_RECORD_KEY: f665f078-4cb5-492f-8136-e2d193ac563f
           
-  cypress-run-firefox:
-    runs-on: ubuntu-latest
-    container:
-        image: cypress/browsers:node12.16.1-chrome80-ff73
-        options: --user 1001
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
-        with:
-          browser: firefox
-          env: false
