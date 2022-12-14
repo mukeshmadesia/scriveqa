@@ -8,3 +8,15 @@ Scrive todo qa
 4. Again click on 'Run workflow' button to trigger the TestCase
 5. It may take few seconds, to reflect new run
 6. Click on latest run
+
+## To Set Up and Run Locally 
+
+1. Clone the project
+2. On Terminal 
+   Run npm install
+4. Run npx cypress open 
+5. Click on E2E Testing
+6. Click on browser of choice (say Chrome)
+7. 'Start E2E Testing in Chrome'
+8. In Browser, Specs You can see Specs (feature) files
+9. Click and Run the specs
