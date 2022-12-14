@@ -13,9 +13,9 @@ Scrive todo qa
 
 1. Clone the project
 2. On Terminal 
-   Run npm install
-4. Run npx cypress open 
-5. Click on E2E Testing
+   Run ```npm install```
+4. Run ```npx cypress open```
+5. A cypress client will open up. Click on E2E Testing
 6. Click on browser of choice (say Chrome)
 7. 'Start E2E Testing in Chrome'
 8. In Browser, Specs You can see Specs (feature) files
